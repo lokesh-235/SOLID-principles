@@ -1,8 +1,14 @@
 package main;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
+import lsp.problematicCode.CreditCard;
+import lsp.problematicCode.MakePayments;
+import lsp.problematicCode.MasterCard;
+import lsp.problematicCode.Rupay;
+import lsp.problematicCode.Visa;
 //import ocp.betterCode.MakePayment;
 import ocp.problematicCode.MakePayment;
 
@@ -54,5 +60,26 @@ public class Main {
 //		payments.add(new DebitCard());
 //		
 //		MakeBetterPayment.makePayments(payments);
+		
+		
+//		LSP
+		
+		List<CreditCard> cards = new ArrayList<>();
+		
+		cards.add(new Visa());
+		cards.add(new MasterCard());
+		cards.add(new Rupay());
+		try {
+		MakePayments.makeInternationalPayments(cards);
+		}catch(NoSuchMethodException e) {
+			System.out.println("Does not support International payments");
+		}
+		
+		try {
+			MakePayments.makeUpiPayments(cards);
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Does not support UPI payments");
+		}
 	}
 }
