@@ -17,7 +17,7 @@ public class Admin implements ICanBuy,ICanSell,ICanApprove {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		System.out.println("Updating Product");
+		System.out.println("Updating Product.");
 	}
 
 	@Override
